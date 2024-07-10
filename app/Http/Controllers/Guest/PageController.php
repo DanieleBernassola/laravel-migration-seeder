@@ -12,8 +12,9 @@ class PageController extends Controller
 {
     public function index()
     {
-        $today = Carbon::today();
-        $trains = Train::whereDate('landing_hour', '=', $today)->get();
+        // $today = Carbon::today();
+        // $trains = Train::whereDate('landing_hour', '=', $today)->get();
+        $trains = Train::all();
 
         return view('welcome', compact('trains'));
     }
