@@ -10,22 +10,31 @@
 </head>
 
 <body>
-    <h1>Treni</h1>
-
-    <ul>
-        @foreach ($trains as $train)
-            <li>Agenzia: {{ $train['agency'] }}</li>
-            <li>Stazione di partenza: {{ $train['start_station'] }}</li>
-            <li>Stazione di arrivo: {{ $train['end_station'] }}</li>
-            <li>Data partenza: {{ $train['landing_hour'] }}</li>
-            <li>Data arrivo: {{ $train['arrival_hour'] }}</li>
-            <li>Codice Treno: {{ $train['train_code'] }}</li>
-            <li>Numero Cabine: {{ $train['n_cabs'] }}</li>
-            <li>In orario: {{ $train['in_time'] }}</li>
-            <li>Cancellato: {{ $train['deleted'] }}</li>
-            <hr>
-        @endforeach
-    </ul>
+    <h1 class="text-center">Treni</h1>
+    <div class="container">
+        <div class="row">
+            @foreach ($trains as $train)
+                <div class="col-3 gy-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title bg-primary rounded text-uppercase">Codice Treno:
+                                {{ $train['train_code'] }}</div>
+                            <p class="card-text">
+                                Agenzia: {{ $train['agency'] }} <br>
+                                Stazione di partenza: {{ $train['start_station'] }} <br>
+                                Stazione di arrivo: {{ $train['end_station'] }} <br>
+                                Data partenza: {{ $train['landing_hour'] }} <br>
+                                Data arrivo: {{ $train['arrival_hour'] }} <br>
+                                Numero Cabine: {{ $train['n_cabs'] }} <br>
+                                In orario: {{ $train['in_time'] }} <br>
+                                Cancellato: {{ $train['deleted'] }} <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
 </body>
 
 </html>
